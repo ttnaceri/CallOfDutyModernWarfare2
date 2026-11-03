@@ -1,0 +1,37 @@
+
+:root{--fg:#e3ecd9;--ac:#f0b429;--bad:#e5484d;color-scheme:dark}
+html,body{margin:0;height:100%;background:#0b0f0c;color:var(--fg);font-family:Arial,Helvetica,sans-serif;overflow:hidden;user-select:none}
+canvas{display:block;position:relative;z-index:0}
+#hud{position:fixed;inset:0;pointer-events:none;display:none;z-index:5}
+#cross{position:absolute;left:50%;top:50%;width:0;height:0}#cross:before{content:"";position:absolute;left:-7px;top:-1px;width:14px;height:2px;background:#fff;box-shadow:0 0 2px #000}
+#cross:after{content:"";position:absolute;left:-1px;top:-7px;width:2px;height:14px;background:#fff;box-shadow:0 0 2px #000}
+#hit{position:absolute;left:50%;top:50%;width:30px;height:30px;margin:-15px;opacity:0;color:#fff;font-size:30px;line-height:30px;text-align:center}
+#dmg{position:absolute;inset:0;box-shadow:inset 0 0 160px 40px #d00;opacity:0;transition:opacity .3s}
+#hp{position:absolute;left:24px;bottom:24px;width:220px}
+#hp div{height:10px;background:#0008;border:1px solid #fff5}#hpb{height:100%!important;background:#7ccf5a;border:0!important}
+#ammo{position:absolute;right:28px;bottom:24px;font-size:36px;font-weight:bold;text-shadow:0 2px 4px #000}
+#ammo small{font-size:18px;opacity:.7}
+#obj{position:absolute;left:24px;top:20px;font-size:15px;text-shadow:0 1px 3px #000;line-height:1.5}
+#obj b{color:var(--ac)}
+#ov{position:fixed;inset:0;display:flex;z-index:9;flex-direction:column;align-items:center;justify-content:center;background:#050805ee;text-align:center;padding:24px;box-sizing:border-box}
+#ov h1{font-size:clamp(28px,6vw,56px);letter-spacing:6px;margin:0 0 8px;color:var(--ac)}
+#ov p{max-width:560px;line-height:1.6;opacity:.9;margin:6px 0}
+#ov button{margin-top:20px;padding:14px 38px;font-size:18px;letter-spacing:3px;background:var(--ac);color:#111;border:0;cursor:pointer;font-weight:bold}
+#keys{font-size:13px;opacity:.65}
+#msel{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px;max-width:680px}#ov #msel button{margin:0;padding:8px 14px;font-size:13px;letter-spacing:1px;background:#2a3328;color:var(--fg)}
+#wn{position:absolute;right:28px;bottom:70px;font-size:14px;letter-spacing:2px;opacity:.85}
+#rad{position:absolute;right:20px;top:20px;border-radius:50%;border:2px solid #fff5;background:#0a140acc}
+#feed{position:absolute;right:20px;top:166px;text-align:right;font-size:14px;line-height:1.6;text-shadow:0 1px 3px #000;color:var(--ac)}
+#sub{position:absolute;left:0;right:0;bottom:90px;text-align:center;font-size:16px;text-shadow:0 1px 4px #000;padding:0 20px}
+#nvo{position:absolute;inset:0;display:none;box-shadow:inset 0 0 150px 20px #000a;background:repeating-linear-gradient(#0000 0 2px,#0f02 2px 3px)}
+#hud>*{z-index:2}#hud>#nvo,#hud>#scope{z-index:1}
+#nvb{position:absolute;left:24px;bottom:46px;color:#7cff8a;font-size:13px;letter-spacing:2px}
+#scope{position:absolute;inset:0;display:none;background:linear-gradient(#000,#000) center/1px 56vmin no-repeat,linear-gradient(#000,#000) center/56vmin 1px no-repeat,radial-gradient(circle at 50% 50%,#0000 0 28vmin,#000 28.3vmin)}
+#nvo:after{content:"";position:absolute;inset:0;opacity:.22;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence baseFrequency='.9' numOctaves='2'/></filter><rect width='120' height='120' filter='url(%23n)'/></svg>");animation:g .15s steps(3) infinite}@keyframes g{to{background-position:60px 40px}}
+#dir{position:absolute;left:50%;top:50%;width:260px;height:260px;margin:-130px;opacity:0;transition:opacity .3s}#dir:before{content:"";position:absolute;left:120px;top:0;border:10px solid transparent;border-bottom:26px solid #e5484d}
+#dot{position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px;border-radius:50%;background:#f33;box-shadow:0 0 10px 4px #f338;display:none}
+#cust{position:absolute;right:24px;top:50%;transform:translateY(-50%);display:none;background:#000a;border:1px solid #fff4;padding:12px 16px;font-size:14px;line-height:1.7}
+#evi{position:absolute;left:50%;top:38px;transform:translateX(-50%);font-size:13px;letter-spacing:2px;text-shadow:0 1px 3px #000}
+#pn{position:absolute;left:24px;bottom:62px;font-size:13px;letter-spacing:3px;color:#5ab0ff}
+#comp{position:absolute;left:50%;top:14px;transform:translateX(-50%);font-size:14px;letter-spacing:3px;text-shadow:0 1px 3px #000}
+body.nv canvas#c3{filter:grayscale(1) sepia(1) hue-rotate(55deg) saturate(5) brightness(1.7)}
